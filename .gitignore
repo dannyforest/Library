@@ -1,0 +1,41 @@
+# Dependency directories
+node_modules/
+
+# TypeScript compiled output
+dist/
+build/
+
+# Environment configuration files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.vscode/
+*.swp
+*.*swp
+*.sublime-workspace
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Optional: TypeScript declaration files
+# *.d.ts
+
+# Optional: Yarn integrity file
+.yarn-integrity
+
+# Optional: Log files
+*.log
+npm-debug.log*
+
+# Optional: Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
