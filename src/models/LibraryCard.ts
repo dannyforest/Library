@@ -3,15 +3,22 @@
 import Member from "./Member";
 
 export default class LibraryCard{
-    public member:Member;
-    public pathPhoto:string;
-    public cardNumber:string;
+    private memberName:string;
+    private pathPhoto:string;
+    private cardNumber:string;
 
-    constructor(cardNumber:string, member:Member, pathPhoto:string) {
-        this.member = member;
+    constructor(cardNumber:string, memberName:string, pathPhoto:string = "") {
+        this.memberName = memberName;
         this.cardNumber = cardNumber;
         this.pathPhoto = pathPhoto;
     }
-
-
+    public getNumber(): string {
+        return this.cardNumber;
+    }
+    getMemberFullName(): string{
+        return this.memberName;
+    }
+    setPhotoPath(photoPath: string){
+        this.pathPhoto = photoPath;
+    }
 }

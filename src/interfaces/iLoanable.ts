@@ -1,6 +1,11 @@
 //Par: Nicolas, Felix, Alexis
 
 interface ILoanable {
-    bookName: string;
-    bookId : number;
+    loanItem: string;
+    dueDate: Date;
+    loaned: boolean;
+    loan(): void;
+
+
+    // DF - suggestion: loan(): void;
 }
