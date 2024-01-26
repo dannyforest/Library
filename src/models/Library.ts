@@ -2,8 +2,10 @@ import Book2 from "./Book2";
 import Member from "./Member";
 // import Book from "./Book";
 import Bookshelf from "./Bookshelf";
+import {Employee} from "../types/Employee";
+import {Address} from "../types/Address";
 
-class Library {
+export default class Library {
     private employee: Employee;
     private books: Book2[];
     private members: Member[];
@@ -24,6 +26,7 @@ class Library {
         this.books = books != undefined ? books : [];
         this.bookshelf = bookshelf != undefined ? bookshelf : [];
     }
+
     public getEmployee(): Employee {
         return this.employee;
     }
