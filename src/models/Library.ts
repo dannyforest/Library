@@ -1,7 +1,7 @@
 import Book2 from "./Book2";
 import Member from "./Member";
 // import Book from "./Book";
-import Bookshelf from "./Bookshelf";
+import Bookshelf from "./Bookshelves/Bookshelf";
 import {Employee} from "../types/Employee";
 import {Address} from "../types/Address";
 

@@ -1,3 +1,8 @@
+import iDisplayable from "../interfaces/iDisplayable";
+import LoanableObject from "./LoanableObjects/loanableObject";
+import iReservable from "../interfaces/IReservable";
+import * as console from "console";
+
 // https://blog.reedsy.com/book-genres/
 enum bookGenres {
     Fantasy,
@@ -21,16 +26,9 @@ enum bookGenres {
     Technology
 }
 
-export default class Book2 {
-
-    public read(): void {
-
-    }
-
-    public loan(): void {
-
-    }
-
+export default class Book2 implements iDisplayable, LoanableObject, iReservable {
+    isLoaned: boolean = false;
+    isReserved: boolean = false;
 
     constructor(private author: string, private title: string, private yearOfPublication: number,
                 private numberOfPages: number, color?: string, hardCover?: boolean, height?: number,
@@ -40,4 +38,34 @@ export default class Book2 {
         this.yearOfPublication = yearOfPublication;
         this.numberOfPages = numberOfPages;
     }
+
+    // public read(): void {
+    //
+    // }
+
+    public verifyAvailability(dateOfLoan: Date): void {
+        // TODO: implement logic
+        throw new Error("Method not implemented.");
+    }
+
+    public loan(): void {
+        if (this.isLoaned || this.isReserved)
+            return;
+
+        this.isLoaned = true;
+        console.log("Book is loaned");
+    }
+    public reserve(): void {
+        if (this.isReserved || this.isLoaned)
+            return;
+
+        this.isReserved = true;
+        console.log("Book is reserved");
+    }
+
+    public display(): void {
+        // TODO: implement all properties
+        console.log("Author: " + this.author);
+    }
+
 }

@@ -1,8 +1,10 @@
 //Par: Nicolas, Felix, Alexis
 
 import LibraryCard from "./LibraryCard";
+import Book2 from "./Book2";
 
-export default class Member{
+export default class Member {
+    private readBooks: Book2[];
     private firstName: string;
     private lastName: string;
     private age: number
