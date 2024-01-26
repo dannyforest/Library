@@ -11,17 +11,19 @@ export default class Bookshelf {
     private innerWidth: number;
     private innerHeight: number;
     private innerDepth: number;
+
     constructor(width: number, height: number, depth: number) {
         this.innerWidth = width;
         this.innerHeight = height;
         this.innerDepth = depth;
     }
-    public addBook(book: Book){
+
+    public addBook(book: Book) {
         this.books.push(book);
     }
 
     public removeBookById(id: string): Book {
-        const bookIndex = this.books.findIndex(book => book.getId() == id );
+        const bookIndex = this.books.findIndex(book => book.getId() == id);
         if (bookIndex >= 0) return this.books.splice(bookIndex)[0];
     }
 
@@ -32,11 +34,10 @@ export default class Bookshelf {
     }
     */
 
-    public getBookById(id: string): Book{
-        const bookIndex = this.books.findIndex(book => book.getId() == id );
+    public getBookById(id: string): Book {
+        const bookIndex = this.books.findIndex(book => book.getId() == id);
         if (bookIndex !== -1) return this.books[bookIndex];
     }
-
 
 
 }

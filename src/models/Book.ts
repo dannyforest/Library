@@ -1,7 +1,7 @@
 import * as console from "console";
 
 
-export default class book implements iReadable, iOrder{
+export default class book implements iReadable, iOrder {
     protected author: string;
     protected ISBN: number; // international standard book number
     protected page_number: number;
@@ -9,8 +9,9 @@ export default class book implements iReadable, iOrder{
     protected title: string;
     protected bookLabel: string;//maison d'edition
     isRead: boolean;
+
     constructor(author: string, ISBN: number, page_number: number, genre: string, title: string,
-                bookLabel: string,isRead: boolean) {
+                bookLabel: string, isRead: boolean) {
 
         this.author = author;
         this.ISBN = ISBN;
@@ -20,37 +21,46 @@ export default class book implements iReadable, iOrder{
         this.bookLabel = bookLabel;
         this.isRead = isRead;
     }
-    public getauthor():string{
-        return this.author;}
-    public getISBN():number{
-            return this.ISBN;}
 
-    public getpage_number(): number{
-        return this.page_number;}
+    public getauthor(): string {
+        return this.author;
+    }
 
-    public getgenre(): string{
-        return this.genre;}
+    public getISBN(): number {
+        return this.ISBN;
+    }
 
-    public gettitle(): string{
+    public getpage_number(): number {
+        return this.page_number;
+    }
+
+    public getgenre(): string {
+        return this.genre;
+    }
+
+    public gettitle(): string {
         return this.title;
     }
-public getbookLabel(): string{
+
+    public getbookLabel(): string {
         return this.bookLabel;
-}
-order() {
+    }
+
+    order() {
         console.log(`je commande ${this.title}`)
-}
-loan() {
-console.log(`j'emprunte ${this.title}`)
-}
+    }
 
-markAsRead() {
-    this.isRead = true;
-}
+    loan() {
+        console.log(`j'emprunte ${this.title}`)
+    }
+
+    markAsRead() {
+        this.isRead = true;
+    }
 
 
 }
-const book1 = new book("nab",123,100,"action","le pouvoir de la confiance en soi",
+const book1 = new book("nab", 123, 100, "action", "le pouvoir de la confiance en soi",
     "cegepe de shawinigan", true);
 console.log(book1);
 
