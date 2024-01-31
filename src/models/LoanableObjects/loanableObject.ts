@@ -7,6 +7,7 @@ import IDisplayable from "../../interfaces/iDisplayable";
 export default abstract class LoanableObject implements iReservable, IDisplayable {
     id: string;
     author: string;
+    dueDate: Date | undefined;
     isLoaned: boolean = false;
     isReserved: boolean = false;
 
@@ -20,6 +21,7 @@ export default abstract class LoanableObject implements iReservable, IDisplayabl
     }
 
     public loan(): void {
+        // TODO: Can't loan is a penalty is owed
         if (this.isLoaned || this.isReserved)
             return;
 

@@ -28,11 +28,25 @@ export default abstract class Bookshelf {
 
     public abstract addLoanable(loanable: LoanableObject): void;
 
+    /**
+     * Finds a loanable object by its ID.
+     *
+     * @param {string} id - The ID of the loanable object to find.
+     * @return {LoanableObject|undefined} - The loanable object with the specified ID, or undefined if not found.
+     */
+    public findLoanableObjectById(id: string): LoanableObject | undefined {
+        return this.loanables!.find((loanable) => loanable.id == id);
+    }
+
+    public reorderLoablableObjects() {
+
+    }
+
     public getLoanables(): LoanableObject[] {
         return this.loanables!;
     }
 
-    public removeBookById(id: string): LoanableObject | undefined {
+    public removeLoanableObjectById(id: string): LoanableObject | undefined {
         const loanables = this.getLoanables();
         const loanable = loanables.find((loanable) => loanable.id == id);
 

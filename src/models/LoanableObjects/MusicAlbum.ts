@@ -1,14 +1,12 @@
 import LoanableObject from "./loanableObject";
 
-export default class MusicAlbum implements LoanableObject {
-    id: string;
+export default class MusicAlbum extends LoanableObject {
     isReserved: boolean = false;
-    author: string;
 
-    constructor(id: string, author: string) {
-        // super(id, author);
-        this.id = id;
-        this.author = author;
+    constructor(id: string, author: string, dueDate?: Date) {
+        super(id, author);
+
+        this.dueDate = dueDate;
     }
 
     public display(): void {

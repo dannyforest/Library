@@ -26,13 +26,15 @@ enum bookGenres {
     Technology
 }
 
-export default class Book2 implements iDisplayable, LoanableObject, iReservable {
+export default class Book2 extends LoanableObject implements iDisplayable, iReservable {
     isLoaned: boolean = false;
     isReserved: boolean = false;
 
-    constructor(private author: string, private title: string, private yearOfPublication: number,
+    constructor(public id: string, public author: string, private title: string, private yearOfPublication: number,
                 private numberOfPages: number, color?: string, hardCover?: boolean, height?: number,
                 bookGenre?: bookGenres) {
+        super(id, author);
+
         this.author = author;
         this.title = title;
         this.yearOfPublication = yearOfPublication;
